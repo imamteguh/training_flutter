@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import './screens/home_screen.dart';
 import './screens/contact_screen.dart';
 import './screens/setting_screen.dart';
+import './screens/search_screen.dart';
 
 void main() => runApp(const MyApp());
 
@@ -15,9 +16,9 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: Colors.lightBlue,
-          brightness: Brightness.dark,
-          primary: Colors.amber,
+          seedColor: Colors.blue,
+          // brightness: Brightness.dark,
+          // primary: Colors.amber,
         ),
         useMaterial3: true,
         // brightness: Brightness.dark,
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         HomeScreen.routeName: (context) => HomeScreen(),
         SettingScreen.routeName: (context) => SettingScreen(),
         ContactScreen.routeName: (context) => ContactScreen(),
+        SearchScreen.routeName: (context) => SearchScreen(),
       },
     );
   }

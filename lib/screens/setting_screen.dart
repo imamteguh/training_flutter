@@ -11,6 +11,7 @@ class SettingScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Setting"),
+        centerTitle: false,
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         actions: [
           IconButton(

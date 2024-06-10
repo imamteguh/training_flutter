@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:training/screens/search_screen.dart';
 
 import '../widgets/drawer_widget.dart';
+import './snapshot_screen.dart';
+import './favorite_screen.dart';
+import './popular_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home';
@@ -29,13 +33,16 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text("Home"),
+          centerTitle: false,
           backgroundColor: Theme.of(context).colorScheme.inversePrimary,
           bottom: TabBar(
             tabs: myTab,
           ),
           actions: [
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushNamed(SearchScreen.routeName);
+              },
               icon: Icon(Icons.search),
             ),
           ],
@@ -43,35 +50,9 @@ class HomeScreen extends StatelessWidget {
         drawer: DrawerWidget(),
         body: TabBarView(
           children: [
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Snapshot Screen"),
-                  SizedBox(height: 10),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: Text("Button"),
-                  ),
-                ],
-              ),
-            ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Populer Screen"),
-                ],
-              ),
-            ),
-            Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text("Favorite Screen"),
-                ],
-              ),
-            ),
+            SnapshotScreen(),
+            PopularScreen(),
+            FavoriteScreen(),
           ],
         ),
       ),

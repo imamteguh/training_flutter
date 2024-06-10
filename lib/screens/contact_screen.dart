@@ -16,8 +16,9 @@ class ContactScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Contact"),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        centerTitle: false,
       ),
-      drawer: DrawerWidget(),
+      drawer: const DrawerWidget(),
       body: ListView.builder(
         itemCount: 20,
         itemBuilder: (context, index) {
